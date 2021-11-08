@@ -1,0 +1,22 @@
+:host {
+  font-size: 22px;
+}
+
+.count {
+  font-size: 80px;
+}
+
+.button {
+  margin: 10px;
+  border-radius: 3px;
+  border: none;
+  background-color: black;
+  padding: 20px 40px;
+  color: white;
+  font-weight: bold;
+}
+
+.button--secondary {
+  background-color: whitesmoke;
+  color: black;
+}

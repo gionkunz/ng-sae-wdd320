@@ -1,0 +1,14 @@
+<header>
+  <h1>Router Test App</h1>
+  <nav>
+    <a routerLink="route-a" routerLinkActive="active">Route A</a>
+    <a routerLink="route-a/b-in-a" routerLinkActive="active">Route B in A</a>
+    <a routerLink="route-b" routerLinkActive="active">Route B</a>
+    <a *ngFor="let i of [1, 2, 3]" routerLink="route-c/{{i}}" routerLinkActive="active">Route C ({{i}})</a>
+  </nav>
+</header>
+<main>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</main>

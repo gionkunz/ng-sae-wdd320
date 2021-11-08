@@ -1,0 +1,16 @@
+<header>
+  <h1>Github Search</h1>
+</header>
+<main>
+  <div>
+    <input class="query" type="text" #queryInput>
+    <button class="search" (click)="search()">Search</button>
+  </div>
+</main>
+<div class="results" *ngIf="result">
+  <div *ngFor="let item of result.items" class="result">
+    <h4 class="name">{{ item.full_name }}</h4>
+    <div class="description">{{ item.description }}</div>
+    by {{item.owner.login}}
+  </div>
+</div>
