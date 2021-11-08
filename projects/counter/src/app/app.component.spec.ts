@@ -31,7 +31,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should create the app', () => {
+  it('should increase count by 3 if clicked 3 times', () => {
     // Given
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
@@ -48,16 +48,22 @@ describe('AppComponent', () => {
     expect((count.nativeElement as HTMLParagraphElement).textContent?.trim()).toBe('3')
   });
 
-  /*it(`should have as title 'counter'`, () => {
+
+  it('should reset count if reset button is pressed', () => {
+    // Given
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('counter');
+    app.count = 10;
+    const button = fixture.debugElement.query(By.css('.reset'));
+    const count = fixture.debugElement.query(By.css('.count'));
+
+    // When (reset)
+    fixture.detectChanges();
+    button.triggerEventHandler('click', null);
+    fixture.detectChanges();
+
+    // Then
+    expect((count.nativeElement as HTMLParagraphElement).textContent?.trim()).toBe('0')
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('counter app is running!');
-  });*/
 });
